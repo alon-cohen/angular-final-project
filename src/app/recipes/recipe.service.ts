@@ -10,21 +10,19 @@ export class RecipeService {
 
   private recipes: Recipe[] = [
     new Recipe(
-      'Shnitzel',
-      'Shnitzel and Fries',
-      'https://www.daringgourmet.com/wp-content/uploads/2014/03/Schnitzel-7_edited.jpg',
-      [
-        new Ingredient('Chicken', 1),
-        new Ingredient('French Fries', 5)
-      ]),
-    new Recipe(
-      'Hamburger',
-      'Yammy Hamburger',
-      'https://www.thesun.co.uk/wp-content/uploads/2016/09/nintchdbpict000264481984.jpg?w=960',
+      'Tasty Schnitzel',
+      'A super-tasty Schnitzel - just awesome!',
+      'https://upload.wikimedia.org/wikipedia/commons/7/72/Schnitzel.JPG',
       [
         new Ingredient('Meat', 1),
+        new Ingredient('French Fries', 20)
+      ]),
+    new Recipe('Big Fat Burger',
+      'What else you need to say?',
+      'https://upload.wikimedia.org/wikipedia/commons/b/be/Burger_King_Angus_Bacon_%26_Cheese_Steak_Burger.jpg',
+      [
         new Ingredient('Buns', 2),
-        new Ingredient('Onions', 3)
+        new Ingredient('Meat', 1)
       ])
   ];
 
@@ -32,6 +30,10 @@ export class RecipeService {
 
   getRecipes() {
     return this.recipes.slice();
+  }
+
+  getRecipe(index: number) {
+    return this.recipes[index];
   }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
